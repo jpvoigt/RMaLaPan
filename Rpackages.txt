@@ -1,0 +1,13 @@
+knitr
+xtable
+jsonlite
+yaml
+bitops
+kableExtra
+lubridate
+numform
+tokenizers
+data.tree
+scales
+Rcpp
+reticulate
