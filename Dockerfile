@@ -11,6 +11,11 @@ COPY Rpackages.txt .
 
 RUN Rscript -e 'install.packages(readLines("Rpackages.txt"))'
 
+COPY server-deb.url .
+RUN apt-get install -y gdebi-core
+RUN wget `cat server-deb.url`
+RUN gdebi `cat server-deb.url | sed -n -e 's/.*\/\(rstudio.*deb\).*/\1/gp'`
+
 RUN useradd -ms /bin/bash rmalapan
 USER rmalapan
 WORKDIR /home/rmalapan
