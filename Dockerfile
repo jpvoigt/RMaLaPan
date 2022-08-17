@@ -15,4 +15,4 @@ RUN useradd -ms /bin/bash rmalapan
 USER rmalapan
 WORKDIR /home/rmalapan
 
-CMD ["R"]
+CMD ["R","--vanilla"]
